@@ -28,11 +28,11 @@
 
     <script type="text/javascript">
    
-   const container = document.querySelector(".container");
+    const container = document.querySelector(".container");
     const card = document.querySelector(".card");
     const title = document.querySelector(".title");
     const santa = document.querySelector(".santa");
-    const tree = document.querySelector(".tree");
+    /*const tree = document.querySelector(".tree");*/
 
     //card rotate on mouse move
     container.addEventListener("mousemove", (rotate) => {
@@ -46,19 +46,37 @@
       container.addEventListener("mouseover", () => {
       title.style.transform = "translate3d(0, 0, 160px)";
       santa.style.transform = "translate3d(0, 0, 220px)";
-      tree.style.transform = "translate3d(0, 0, 120px)";
-      card.style.transition = "all 0.1s ease";
+      /*tree.style.transform = "translate3d(0, 0, 120px)";*/
     });
 
     //card back to normal when mouse out
     container.addEventListener("mouseout", () => {
+
       card.style.transform = "rotateY(0deg) rotateX(0deg)";
       card.style.transition = "all 0.5s ease";
       title.style.transform = "translate3d(0, 0, 0)";
       santa.style.transform = "translate3d(0, 0, 0)";
-      tree.style.transform = "translate3d(0, 0, 0)";
+     /* tree.style.transform = "translate3d(0, 0, 0)";*/
     });
+
+   container.addEventListener('touchmove', () =>{
+     
+    title.style.transform = "translate3d(0, 0, 160px)";
+    santa.style.transform = "translate3d(0, 0, 220px)";
+
+  })
+
+  container.addEventListener('touchend', () =>{
+     
+      card.style.transform = "rotateY(0deg) rotateX(0deg)";
+      card.style.transition = "all 0.5s ease";
+      title.style.transform = "translate3d(0, 0, 0)";
+      santa.style.transform = "translate3d(0, 0, 0)";
+ 
+   })
+
     </script>
 
+  
   </body>
 </html>
